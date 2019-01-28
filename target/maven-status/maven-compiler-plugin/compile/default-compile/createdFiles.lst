@@ -1,0 +1,12 @@
+org\swift\order\OrderHelper.class
+org\swift\order\UserLoginHelper.class
+org\swift\order\OrderProcessingOperations.class
+org\swift\order\PropertiesConfiguration.class
+org\swift\order\ProductHelper.class
+org\swift\order\RuleHelper.class
+org\swift\order\Order.class
+org\swift\order\UserHelper.class
+org\swift\order\Rule.class
+org\swift\order\MainOrderProcessor.class
+org\swift\order\User.class
+org\swift\order\Product.class

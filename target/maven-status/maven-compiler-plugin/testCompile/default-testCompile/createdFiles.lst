@@ -1,0 +1,8 @@
+org\swift\order\RuleHelperTest.class
+org\swift\order\MainOrderProcessorTest.class
+org\swift\order\OrderProcessingOperationsTest.class
+org\swift\order\UserLoginHelperTest.class
+org\swift\order\OrderHelperTest.class
+org\swift\order\PropertiesConfigurationTest.class
+org\swift\order\ProductHelperTest.class
+org\swift\order\UserHelperTest.class

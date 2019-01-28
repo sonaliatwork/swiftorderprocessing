@@ -20,7 +20,7 @@ limitations under the License.
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.swift.order</groupId>
-    <artifactId>swiftorderprocessing</artifactId>
+    <artifactId>swiftorderprocessingunit</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 	
@@ -43,7 +43,7 @@ limitations under the License.
 
     </dependencies>
     <build>
-        <finalName>swiftorderprocessing</finalName>
+        <finalName>swiftorderprocessingunit</finalName>
         <plugins>
 
             <plugin>
