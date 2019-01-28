@@ -23,8 +23,7 @@ public class RuleHelper implements OrderProcessingOperations {
 		return ruleHelper;
 	}
 
-	public Rule createRule() {
-
+	public void createRule() {
 		String ruleDefinition = "";
 		String paymentStatus = "";
 		String action = "";
@@ -45,10 +44,9 @@ public class RuleHelper implements OrderProcessingOperations {
 			while ((line = br.readLine()) != null) {
 				lastrecord = line;
 			}
-
 			fields = lastrecord.split(" ");
 			if (!(fields == null || fields.length < FIELD_COUNT_RULE_DETAILS)) {
-				System.out.println("fields[0]" + fields[0]);
+				
 				String lastrecordId = fields[0];
 				lastRuleId = lastrecordId == null ? 0 : Integer.parseInt(lastrecordId);
 				newRuleId = lastRuleId + 1;
@@ -78,19 +76,11 @@ public class RuleHelper implements OrderProcessingOperations {
 			actionOwner = ((actionOwner != null) ? actionOwner.trim().replace(" ", "_") : "");
 			rule.setActionOwner(actionOwner);
 			rule.setRuleActive(ruleActive);
-			
+			storeDetailsInFile(rule);
+			showAll();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return rule;
-	}
-	
-	void createRuleActivities()
-	{
-
-
-		storeDetailsInFile(createRule());
-		showAll();
 	}
 
 	@Override
@@ -175,7 +165,7 @@ public class RuleHelper implements OrderProcessingOperations {
 		showAll();
 		try {
 			while (!recordFound) {
-				console.printf("\nPlease enter the valid rule Id which you want to update:");
+				console.printf("\nPlease enter the valid rule Id which you want to Search:");
 				ruleIdByUser = console.readLine();
 
 				if (ruleIdToSearch == 0 && attemptCounter++ == 3) {
@@ -227,7 +217,6 @@ public class RuleHelper implements OrderProcessingOperations {
 		String ruleRepresentation = "\n" + rule.getRuleId() + " " + rule.getRuleDefinition() + " "
 				+ rule.getPaymentStatus() + " " + rule.getAction() + " " + rule.getRuleOwner() + " "
 				+ rule.getActionOwner() + " " + rule.getRuleActive();
-
 		WriteInTheFile(ruleRepresentation);
 	}
 
@@ -262,7 +251,7 @@ public class RuleHelper implements OrderProcessingOperations {
 				showAll();
 				break;
 			case "2":
-				create();
+				createRule();
 				break;
 			case "3":
 				search();
@@ -276,7 +265,7 @@ public class RuleHelper implements OrderProcessingOperations {
 			case "6":
 				console.printf("Exiting from the System, Thank you!");
 				System.exit(0);
-			default :
+			default:
 				console.printf("\n#Wrong Option, enter correct operation number!\n**********\n");
 			}
 		}
@@ -285,6 +274,6 @@ public class RuleHelper implements OrderProcessingOperations {
 	@Override
 	public void create() {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
