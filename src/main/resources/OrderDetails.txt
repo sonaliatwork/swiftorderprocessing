@@ -1,0 +1,6 @@
+#orderId #orderDate #productId #paymentStatus #orderOwner
+1 03-01-2019 1 Y OM
+2 04-01-2019 1 Y OM
+3 05-01-2019 1 N OM
+4 06-01-2019 1 Y OM
+5 06-01-2019 1 N OM
